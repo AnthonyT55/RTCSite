@@ -5,77 +5,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cougar Wrestling RTC Day of Giving</title>
   <style>
-    body {
+    /* --- Global Reset & Layout --- */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #004AAD; /* Blue background */
-      font-family: sans-serif;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(180deg, #004AAD 0%, #002F6C 100%);
+      color: #222;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 20px;
     }
 
     .container {
-      background-color: #FFEB3B; /* Yellow box */
-      padding: 40px;
-      border-radius: 20px;
-      max-width: 600px;
-      width: 90%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background: #FFEB3B;
+      border-radius: 16px;
+      padding: 40px 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       text-align: center;
+      animation: fadeIn 0.8s ease-out;
     }
 
-    h1 {
-      color: #333;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    img {
+      width: 120px;
+      height: auto;
       margin-bottom: 20px;
     }
 
+    h1 {
+      font-size: 1.8rem;
+      color: #222;
+      margin-bottom: 15px;
+    }
+
     p {
-      color: #444;
-      font-size: 18px;
+      font-size: 1.1rem;
+      color: #333;
       margin-bottom: 30px;
     }
 
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
     .button {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 30px;
-      font-size: 16px;
-      font-weight: bold;
-      color: white;
-      background-color: #333;
+      flex: 1 1 40%;
+      min-width: 120px;
+      background-color: #004AAD;
+      color: #fff;
       border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      border-radius: 10px;
+      padding: 14px 0;
+      font-weight: bold;
+      font-size: 1rem;
       text-decoration: none;
-      transition: background-color 0.3s;
+      transition: all 0.25s ease;
     }
 
     .button:hover {
-      background-color: #555;
+      background-color: #003C8A;
+      transform: translateY(-2px);
     }
 
     .footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: grey;
+      margin-top: 35px;
+      font-size: 0.9rem;
+      color: #333;
+      opacity: 0.8;
+    }
+
+    /* --- Mobile Tweaks --- */
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .button {
+        font-size: 0.95rem;
+        padding: 12px 0;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="logo.png" alt="">
+    <img src="logo.png" alt="Cougar Wrestling Logo">
     <h1>Support The Cougar Wrestling RTC</h1>
-    <p>Click a button below to make a donation:</p>
+    <p>Choose a donation amount to make an impact today:</p>
 
-    <!-- Replace the href values with your actual Stripe payment links -->
-    <a href="https://buy.stripe.com/test_250" class="button">$250</a>
-    <a href="https://buy.stripe.com/test_500" class="button">$500</a>
-    <a href="https://buy.stripe.com/test_750" class="button">$750</a>
-    <a href="https://buy.stripe.com/test_1000" class="button">$1000</a>
-    <br/>
-    <a href="https://buy.stripe.com/test_other" class="button">Other</a>
+    <div class="buttons">
+      <a href="https://buy.stripe.com/test_fZu8wP9YEbFo3o03xMao800" class="button">$250</a>
+      <a href="https://buy.stripe.com/test_cNi28rdaQ7p8cYA3xMao801" class="button">$500</a>
+      <a href="https://buy.stripe.com/test_cNi00jfiYgZI7Eg8S6ao802" class="button">$750</a>
+      <a href="https://buy.stripe.com/test_8x2aEXc6M8tcbUwfguao803" class="button">$1000</a>
+      <a href="https://buy.stripe.com/test_14AbJ19YE24O8Ikc4iao804" class="button">Other</a>
+    </div>
 
     <div class="footer">
       Payments are processed securely via Stripe.
@@ -83,3 +128,4 @@
   </div>
 </body>
 </html>
+
