@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cougar Wrestling RTC Day of Giving</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* --- Global Reset & Layout --- */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,48 +13,66 @@
     }
 
     body {
-      font-family: "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(180deg, #004AAD 0%, #002F6C 100%);
-      color: #222;
+      font-family: 'Oswald', Impact, sans-serif;
+      background: radial-gradient(circle at top, #004AAD 0%, #002B6C 100%);
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle texture pattern */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.05) 0,
+        rgba(255,255,255,0.05) 2px,
+        transparent 2px,
+        transparent 6px
+      );
+      opacity: 0.2;
+      z-index: 0;
     }
 
     .container {
-      background: #FFEB3B;
-      border-radius: 16px;
-      padding: 40px 30px;
-      max-width: 500px;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(180deg, #FFEB3B, #FFD600);
+      border-radius: 20px;
+      padding: 45px 30px;
+      max-width: 520px;
       width: 100%;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
       text-align: center;
-      animation: fadeIn 0.8s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      border: 4px solid #fff;
     }
 
     img {
-      width: 120px;
+      width: 140px;
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     h1 {
-      font-size: 1.8rem;
-      color: #222;
-      margin-bottom: 15px;
+      font-size: 2rem;
+      color: #002B6C;
+      text-shadow: 2px 2px 0 #fff;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
     }
 
     p {
       font-size: 1.1rem;
-      color: #333;
-      margin-bottom: 30px;
+      color: #222;
+      margin-bottom: 25px;
+      font-weight: 500;
     }
 
     .buttons {
@@ -67,43 +85,46 @@
     .button {
       flex: 1 1 40%;
       min-width: 120px;
-      background-color: #004AAD;
+      background: linear-gradient(180deg, #004AAD, #003580);
       color: #fff;
-      border: none;
-      border-radius: 10px;
+      border: 2px solid #fff;
+      border-radius: 12px;
       padding: 14px 0;
-      font-weight: bold;
-      font-size: 1rem;
+      font-weight: 600;
+      font-size: 1.05rem;
       text-decoration: none;
       transition: all 0.25s ease;
+      text-transform: uppercase;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .button:hover {
-      background-color: #003C8A;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      background: linear-gradient(180deg, #003C8A, #002B6C);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
     }
 
     .footer {
       margin-top: 35px;
       font-size: 0.9rem;
-      color: #333;
-      opacity: 0.8;
+      color: #222;
+      opacity: 0.9;
+      font-weight: 500;
     }
 
-    /* --- Mobile Tweaks --- */
     @media (max-width: 480px) {
       .container {
-        padding: 30px 20px;
+        padding: 35px 20px;
       }
       h1 {
-        font-size: 1.5rem;
-      }
-      p {
-        font-size: 1rem;
+        font-size: 1.6rem;
       }
       .button {
-        font-size: 0.95rem;
+        font-size: 1rem;
         padding: 12px 0;
+      }
+      img {
+        width: 110px;
       }
     }
   </style>
@@ -112,7 +133,7 @@
   <div class="container">
     <img src="logo.png" alt="Cougar Wrestling Logo">
     <h1>Support The Cougar Wrestling RTC</h1>
-    <p>Choose a donation amount to make an impact today:</p>
+    <p>Your donation helps empower the next generation of champions.</p>
 
     <div class="buttons">
       <a href="https://buy.stripe.com/test_fZu8wP9YEbFo3o03xMao800" class="button">$250</a>
